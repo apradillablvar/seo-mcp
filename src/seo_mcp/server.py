@@ -142,7 +142,7 @@ def keyword_difficulty(keyword: str, country: str = "us") -> Optional[Dict[str, 
 
 def main():
     """Run the MCP server"""
-    mcp.run()
+    mcp.run(transport="http", host="0.0.0.0", port=8080, debug=True)
 
 
 if __name__ == "__main__":

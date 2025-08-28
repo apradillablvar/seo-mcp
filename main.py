@@ -1,8 +1,8 @@
-from seo_mcp.server import mcp
+from seo_mcp.server import main as server_main
 
 def main():
-    """Entry point for the seo-mcp package"""
-    mcp.run(transport="http", host="0.0.0.0")
+    """Entry point for the backlinks-mcp package"""
+    server_main()
 
 if __name__ == "__main__":
     main()
