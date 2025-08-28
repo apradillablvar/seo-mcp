@@ -146,7 +146,7 @@ def main():
     port = int(os.environ.get("PORT", 8000))
 
     # Explicitly tell FastMCP to run as an HTTP server
-    mcp.run(transport="http", host=host, port=port)
+    mcp.run(transport="http", host=host, port=port, stateless_http=True)
 
 
 
