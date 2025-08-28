@@ -142,7 +142,12 @@ def keyword_difficulty(keyword: str, country: str = "us") -> Optional[Dict[str, 
 
 def main():
     """Run the MCP server"""
-    mcp.run(transport='http', stateless_http=True, port=8000, debug=True)
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", 8000))
+
+    # Explicitly tell FastMCP to run as an HTTP server
+    mcp.run(transport="http", host=host, port=port)
+
 
 
 if __name__ == "__main__":
