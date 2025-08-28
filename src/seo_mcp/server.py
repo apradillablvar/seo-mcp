@@ -4,7 +4,6 @@ SEO MCP Server: A free SEO tool MCP (Model Control Protocol) service based on Ah
 import requests
 import time
 import os
-import uvicorn
 import urllib.parse
 from typing import Dict, List, Optional, Any, Literal
 
@@ -145,7 +144,7 @@ def main():
     """Run the MCP server"""
     host = os.environ.get("HOST", "0.0.0.0")
     port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(mcp.app, host=host, port=port)
+    mcp.run(host=host, port=port)
 
 
 if __name__ == "__main__":
