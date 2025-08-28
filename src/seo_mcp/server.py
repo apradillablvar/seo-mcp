@@ -22,6 +22,7 @@ app = FastAPI(title="SEO MCP Wrapper")
 # This will respond to Railway's health checks with a 200 OK status.
 @app.get("/")
 def health_check():
+    print("--- HEALTH CHECK ENDPOINT WAS HIT ---")
     return {"status": "ok", "message": "SEO MCP is healthy"}
 
 # 3. Create your MCP instance as you did before.
