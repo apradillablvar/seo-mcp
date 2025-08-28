@@ -15,7 +15,6 @@ from seo_mcp.traffic import check_traffic
 
 
 mcp = FastMCP("SEO MCP")
-print(f"--- DEBUG: Attributes of mcp object: {dir(mcp)} ---")
 # CapSolver website: https://dashboard.capsolver.com/passport/register?inviteCode=1dTH7WQSfHD0
 # Get API Key from environment variable - must be set for production use
 api_key = os.environ.get("CAPSOLVER_API_KEY")
