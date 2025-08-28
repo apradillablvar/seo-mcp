@@ -8,7 +8,7 @@ import urllib.parse
 from typing import Dict, List, Optional, Any, Literal
 
 from fastmcp import FastMCP
-from fastapi.responses import JSONResponse
+
 from seo_mcp.backlinks import get_backlinks, load_signature_from_cache, get_signature_and_overview
 from seo_mcp.keywords import get_keyword_ideas, get_keyword_difficulty
 from seo_mcp.traffic import check_traffic
@@ -62,12 +62,6 @@ def get_capsolver_token(site_url: str) -> Optional[str]:
         if status == "failed" or resp.get("errorId"):
             return None
 
-# --- Add this health check endpoint ---
-@mcp.sse_app.get("/", tags=["Health Check"])
-async def health_check():
-    """A simple endpoint to confirm the server is running."""
-    return JSONResponse(content={"status": "ok"})
-# ------------------------------------
 
 @mcp.tool()
 def get_backlinks_list(domain: str) -> Optional[Dict[str, Any]]:
