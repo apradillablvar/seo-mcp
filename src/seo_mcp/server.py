@@ -14,7 +14,7 @@ from seo_mcp.keywords import get_keyword_ideas, get_keyword_difficulty
 from seo_mcp.traffic import check_traffic
 
 
-mcp = FastMCP("SEO MCP")
+mcp = FastMCP("SEO MCP", transport='http', stateless_http=True)
 
 # CapSolver website: https://dashboard.capsolver.com/passport/register?inviteCode=1dTH7WQSfHD0
 # Get API Key from environment variable - must be set for production use
@@ -142,7 +142,7 @@ def keyword_difficulty(keyword: str, country: str = "us") -> Optional[Dict[str, 
 
 def main():
     """Run the MCP server"""
-    mcp.run(transport="http", host="0.0.0.0", port=8080, debug=True)
+    mcp.run(transport="http", host="0.0.0.0", port=8000, debug=True)
 
 
 if __name__ == "__main__":
